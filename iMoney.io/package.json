@@ -1,0 +1,18 @@
+{
+  "name": "imoney",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "request": "*",
+    "xml2js": "*"
+  },
+  "main": "fund.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "xouyang",
+  "license": "UNLICENSED",
+  "description": "parse the fund information"
+}
