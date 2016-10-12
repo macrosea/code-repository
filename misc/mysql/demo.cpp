@@ -1,9 +1,4 @@
-/****************************************************
-*@brief:mysqlhelper demo
-*@autor:lvlv
-*@date:2016.06.12
-*@MySQL version:MySQL Community Server 5.6.30 (GPL)
-****************************************************/
+
 
 #include <string.h>
 #include <iostream>
@@ -16,9 +11,9 @@ using namespace mysqlhelper;
 
 int main(int argc,char* argv[]){
 
-    //初始化mysql对象并建立连接
+
     MysqlHelper mysqlHelper;
-    mysqlHelper.init("119.29.184.114","root","123456","StudentCourse");
+    mysqlHelper.init("xxxx.xxx.xxx.xxxx","root","123456","StudentCourse");
     try{
         mysqlHelper.connect();
     }catch(MysqlHelper_Exception& excep){
@@ -26,15 +21,12 @@ int main(int argc,char* argv[]){
         return -1;
     }
 
-    //增加一条学生记录
-    //示例插入语句
-    //string sql="insert into student values("201421031060","吕吕","华南理工大学","2014","软件工程",1)";
 
     MysqlHelper::RECORD_DATA record;
-    record.insert(make_pair("studentNo",make_pair(MysqlHelper::DB_STR,"201421031060")));
-    record.insert(make_pair("name",make_pair(MysqlHelper::DB_STR,"吕吕")));
-    record.insert(make_pair("school",make_pair(MysqlHelper::DB_STR,"广州中医药大学")));
-    record.insert(make_pair("grade",make_pair(MysqlHelper::DB_STR,"2014")));
+    record.insert(make_pair("studentNo",make_pair(MysqlHelper::DB_STR,"201621031060")));
+    record.insert(make_pair("name",make_pair(MysqlHelper::DB_STR,"name")));
+    record.insert(make_pair("school",make_pair(MysqlHelper::DB_STR,"school")));
+    record.insert(make_pair("grade",make_pair(MysqlHelper::DB_STR,"2016")));
     record.insert(make_pair("major",make_pair(MysqlHelper::DB_STR,"计算机科学与技术")));
     record.insert(make_pair("gender",make_pair(MysqlHelper::DB_INT,"1")));
        int res=0;

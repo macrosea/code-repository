@@ -1,8 +1,4 @@
-##################################
-# @brief:make scripts
-# @date:2016.05.28
-# @author:lvlv
-##################################
+
 
 #environment var
 VPATH+=.
