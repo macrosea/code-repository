@@ -23,7 +23,7 @@ int main(int argc,char* argv[]){
 
 
     MysqlHelper::RECORD_DATA record;
-    record.insert(make_pair("studentNo",make_pair(MysqlHelper::DB_STR,"201621031060")));
+    record.insert(make_pair("studentNo",make_pair(MysqlHelper::DB_STR,"201421031059")));
     record.insert(make_pair("name",make_pair(MysqlHelper::DB_STR,"name")));
     record.insert(make_pair("school",make_pair(MysqlHelper::DB_STR,"school")));
     record.insert(make_pair("grade",make_pair(MysqlHelper::DB_STR,"2016")));
@@ -38,7 +38,6 @@ int main(int argc,char* argv[]){
     }
     cout<<"res:"<<res<<" insert successfully "<<endl;
 
-    //删除一条学生记录，学号为201421031059
     try{
         res=mysqlHelper.deleteRecord("student","where studentNo=\"201421031059\"");
     }catch(MysqlHelper_Exception& excep){
@@ -47,7 +46,6 @@ int main(int argc,char* argv[]){
     }
     cout<<"res:"<<res<<" delete successfully "<<endl;
 
-    //查找学号为201421031059的学生选择的所有课程名称
     MysqlHelper::MysqlData dataSet;
     string querySQL="select courseName from course co where co.courseNo in (select courseNo from courseSelection where studentNo=\"201421031060\")";
     try{
@@ -61,7 +59,6 @@ int main(int argc,char* argv[]){
         cout<<dataSet[i]["courseName"]<<endl;
     }
 
-    //修改学号为201421031060的学生专业
     MysqlHelper::RECORD_DATA recordChange;
     recordChange.insert(make_pair("major",make_pair(MysqlHelper::DB_STR,"软件工程")));
     try{
